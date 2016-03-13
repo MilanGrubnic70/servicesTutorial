@@ -2,49 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=" device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Forecast</title>
-    <link rel="stylesheet " href="css/main.css">
-    <!-- Latest compiled and minified CSS Bootstrap-->
-    <link rel="stylesheet " href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7 " crossorigin="anonymous ">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
     <!-- AngularJS -->
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></scrip>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 
 <body ng-app="ForecastApp">
-
- 
-<div class="main" ng-controller="MainController">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-5 col-sm-offset-7">
-				<h1>{{fiveDay.city_name}}</h1>
-				<h2>5-Day Forecast</h2>
-				<div class="forecast">
-					<div class="day row">
-						<div class="weekday col-xs-4">
-							{{day.datetime}}
-						</div>
-						<div class="weather col-xs-3">
-							<img ng-src="{{day.icon}}" alt=""/>
-						</div>
-						<div class="col-xs-1"></div>
-						<div class=" high col-xs-2"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
+    <div class="main" ng-controller="MainController">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 col-sm-offset-7">
+                    <h1>{{fiveDay.city_name}}</h1>
+                    <h2>5-Day Forecast</h2>
+                    <div class="forecast">
+                        <div class="day row">
+                            <div class="weekday col-xs-4">
+                                {{day.datetime | date}}
+                            </div>
+                            <div class="weather col-xs-3">
+                                <img ng-src="{{day.icon}}" alt="" />
+                            </div>
+                            <div class="col-xs-1"></div>
+                            <div class=" high col-xs-2">
+                                {{day.high}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Modules -->
-    <script type="text/javascript "src="js/app.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
     <!-- Controllers -->
-    <script type="text/javascript "src="js/controllers/MainController.js"></script>
+    <script type="text/javascript" src="js/controllers/MainController.js"></script>
     <!-- Services -->
-    <script type="text/javascript " src="js/services/forecast.js"></script>
+    <script type="text/javascript" src="js/services/forecast.js"></script>
     <!-- Directives -->
 </body>
 
